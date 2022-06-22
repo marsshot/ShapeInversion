@@ -10,7 +10,7 @@ default: all
 all : $(TEXFILE).pdf
 
 view :
-	open $(TEXFILE).pdf
+	evince $(TEXFILE).pdf
 
 $(TEXFILE).pdf : $(TEXFILE).tex $(TEXFILE).bbl $(TEXFILE).blg
 	$(TEX) $(TEXFILE).tex
