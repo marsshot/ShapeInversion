@@ -403,7 +403,7 @@ Figure~\ref{fig:505a} illustrates the density anomaly resulting from the cell-ba
 
 \subsection{Joint Travel-time and Gravity}
 
-For our final example, we seek to determine the location of the anomalous body using both first-arrival travel time data and gravity data anomaly data. The initial guesses for wave speed (Figure~\ref{fig:301a}) and density (Figure~\ref{fig:501a}) remain unchanged from the earlier examples. 
+In this example, we seek to determine the location of the anomalous body using both first-arrival travel time data and gravity data anomaly data. The initial guesses for wave speed (Figure~\ref{fig:301a}) and density (Figure~\ref{fig:501a}) remain unchanged from the earlier examples. 
 
 The density and wave-speed profiles for the cell-based inversion are identical to those obtained in the previous examples since the cell-based approach does not couple density and wave speed.  Figure~\ref{fig:304b} represents the inverted wave speed profile in this case and Figure~\ref{fig:505b} represents the inverted density profile. Figure~\ref{fig:601} displays the inverted wave speed and density profiles for the joint phase-field inversion, along with the phase-field function $\phi_\epsilon$. Joint inversion greatly improves the estimation of density and provides some uplift to wave speed.
 
@@ -474,7 +474,7 @@ The density $\rho$ is set equal to 1 g/cm$^3$.  The source f corresponds to a 2 
 }
 In this example, we focus exclusively on the Mumford-Shah inversion.  The initial guess is the wave speed profile illustrated in Figure~\ref{fig:701b} and $\phi_\epsilon=1$ (i.e. $\Gamma = \emptyset$).  The initial guess for the wave speed captures some of the large-scale trends of the Marmousi model but does not incorporate any information regarding the anomalies.  Figures~\ref{fig:704} illustrate the inverted wave speed $\kappa(x)$ and the inverted interface set $\phi_\epsilon$. The result demonstrates the ability of Mumford-Shah to determine a large number of interfaces and shapes from acoustic waveforms.
 
-The determination of the wave speed and the boundary set required a multi-stage approach. In the first stage, equation~\ref{eq:epsilon} was minimized using $\beta=10^{-7}$.  In the second stage, the value of $\beta$ was decreased to $\beta=10^{-8}$.  In the third stage, the value of $\beta$ was decreased to $\beta =10^{-9}$.  The data misfit and model misfit versus the number of iterations are plotted in Figure~\ref{fig:706}. The branch points in Figure~\ref{fig:706} indicate where the value of $\beta$ was decreased.  Figure~\ref{fig:706} illustrates that  keeping $\beta$ fixed leads to a plateau in data and model misfit while a strategic decrease in $\beta$ results in a decrease in both data and model misfit.
+The determination of the wave speed and the boundary set require a multi-stage approach. In the first stage, equation~\ref{eq:epsilon} is minimized using $\beta=10^{-7}$.  In the second stage, the value of $\beta$ is decreased to $\beta=10^{-8}$.  In the third stage, the value of $\beta$ is decreased to $\beta =10^{-9}$.  The data misfit and model misfit versus the number of iterations are plotted in Figure~\ref{fig:706}. The branch points in Figure~\ref{fig:706} indicate where the value of $\beta$ is decreased.  Figure~\ref{fig:706} illustrates that  keeping $\beta$ fixed leads to a plateau in data and model misfit while a strategic decrease in $\beta$ results in a decrease in both data and model misfit.
 
 \sendatend{
 \begin{figure}
