@@ -98,7 +98,6 @@ The Ambrosio-Tortorelli approximation $MS_\epsilon$ replaces the minimizing pair
 Minimization of the Ambrosio-Tortorelli approximation in equation \ref{eq:epsilon} requires a discretization of the variables $\kappa$ and $\phi$, along with discrete integration and differentiation operators.  In addition, the mesh size $h$ of the underlying grid must satisfy $h\ll\epsilon$ in order to resolve the boundary layer of $\phi_\epsilon$ near the interface set $\Gamma$ and ensure convergence.  Given such a discretization of the variables $\kappa$ and $\phi$, optimization may be performed using a gradient-based optimization method such as Gauss-Newton, quasi-Newton, or steepest descent.  The interface set $\Gamma$ is determined from the cell values of $\phi_\epsilon$.
 
 \begin{comment}
-The optimization procedure described above amounts to the determination of cell-based values of $\kappa$ and $\phi$ which minimize the objective function~\ref{eq:shape} using the approximation~\ref{eq:epsilon}.  On a formal level, this procedure resembles the traditional cell-based inversion approach.  However, the results of the Mumford-Shah and cell-based inversion strategies can differ significantly due to differences in the objective functions for these two techniques.  This difference is due to the regularization technique used by each method.  For example, cell-based inversion using first-order Tikhonov regularization (i.e. $R(\kappa)=\int_\Omega \left\vert \nabla \kappa \right\vert^2  dx$) leads to parameter values $\kappa$ which are uniformly smooth.  In contrast, Mumford-Shah inversion based on equations \ref{eq:shape}, \ref{eq:Tikhonov}, and \ref{eq:epsilon} enforces smoothness of $\kappa$ only within individual shapes.  
 \end{comment}
 
 \begin{comment}
@@ -149,10 +148,10 @@ The phase-field approximation in equation~\ref{eq:pf} is conceptually similar to
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45,trim=0 25 0 0, clip]{101.png} \label{fig:101a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=25 25 0 0, clip]{102.png} \label{fig:101b}}\\
-\subfloat[]{\includegraphics[scale=0.45]{103.png} \label{fig:101c}}
-\subfloat[]{\includegraphics[scale=0.45, trim=25 0 0 0, clip]{104.png} \label{fig:101d}}
+\subfloat[]{\includegraphics[scale=0.45,trim=0 25 0 0, clip]{1a.png} \label{fig:1a}}
+\subfloat[]{\includegraphics[scale=0.45, trim=25 25 0 0, clip]{1b.png} \label{fig:1b}}\\
+\subfloat[]{\includegraphics[scale=0.45]{1c.png} \label{fig:1c}}
+\subfloat[]{\includegraphics[scale=0.45, trim=25 0 0 0, clip]{1d.png} \label{fig:1d}}
     \caption{Reconstructions of Marmousi model using the Mumford-Shah shape representation. (a) Marmousi model~\cite[]{Marmousi2} spanning over $17\times3.1$km domain discretized with $0.02\times0.02$km cells (resulting in an $851\times155$ dimensional discretized domain), (b) Mumford-Shah reconstruction with $\alpha=10$ and $\beta=0.01$, (c) reconstruction with $\alpha=100$ and $\beta=0.01$, and (d) the $\phi_{\epsilon}$ field from the reconstruction with $\alpha=10$.}
 \label{fig:101}
 \end{figure}
@@ -175,11 +174,11 @@ The phase-field approximation in equation~\ref{eq:pf} is conceptually similar to
 
 Our first example illustrates the ability of the Mumford-Shah inversion technique to segment the Marmousi model into a large number of shapes and interfaces.  Because this example does not incorporate geophysical data, there is actually no inversion taking place.  Instead, we perform image processing (specifically image segmentation) on the Marmousi wave speed model subject to various choices of parameters in the Mumford-Shah functional  (\ref{eq:MS}).
 
-Figure~\ref{fig:101a} illustrates the Marmousi model~\cite[]{Marmousi2} spanning over $17\times3.1$km domain discretized with $0.02\times0.02$km size cells. This discretization results in an $851\times155$ dimensional discretized domain. In order to segment this model into shapes and interfaces, we use the Ambrosio-Tortorelli approximation described in equation~\ref{eq:epsilon}, set $F(\kappa)=\left\vert \nabla \kappa \right\vert^2$, and employ an inexact Gauss-Newton optimization scheme.  In addition, we set $\bar{u}$ to be the Marmousi wave speed model (see~\ref{fig:101a}) and set $u(\kappa)=\kappa$. 
+Figure~\ref{fig:1a} illustrates the Marmousi model~\cite[]{Marmousi2} spanning over $17\times3.1$km domain discretized with $0.02\times0.02$km size cells. This discretization results in an $851\times155$ dimensional discretized domain. In order to segment this model into shapes and interfaces, we use the Ambrosio-Tortorelli approximation described in equation~\ref{eq:epsilon}, set $F(\kappa)=\left\vert \nabla \kappa \right\vert^2$, and employ an inexact Gauss-Newton optimization scheme.  In addition, we set $\bar{u}$ to be the Marmousi wave speed model (see~\ref{fig:1a}) and set $u(\kappa)=\kappa$. 
 
-Figures~\ref{fig:101b} and~\ref{fig:101c} illustrate the recovered velocity $\kappa$ when $\alpha$ is set to 10 and 100, respectively while $\beta$ is kept at 0.01. By insepction, we see that the choice of $\alpha = 100$ associated with Figure \ref{fig:101c} results in a smoother velocity model with fewer boundaries. Figure~\ref{fig:101d} illustrates the diffuse interface set $\phi_\epsilon \approx 0$ for the choice $\alpha = 10$; the boundaries between regions correspond to the black lines.
+Figures~\ref{fig:1b} and~\ref{fig:1c} illustrate the recovered velocity $\kappa$ when $\alpha$ is set to 10 and 100, respectively while $\beta$ is kept at 0.01. By insepction, we see that the choice of $\alpha = 100$ associated with Figure \ref{fig:1c} results in a smoother velocity model with fewer boundaries. Figure~\ref{fig:1d} illustrates the diffuse interface set $\phi_\epsilon \approx 0$ for the choice $\alpha = 10$; the boundaries between regions correspond to the black lines.
 
-Figure~\ref{fig:102} displays one-dimensional plots of the true and recovered velocities from Figures~\ref{fig:101a}-~\ref{fig:101c} at $x = 6$ km. Figure~\ref{fig:102} confirms that the recovered velocity is smoother when $\alpha = 100$ than when $\alpha = 10$. This observation is true in general: setting the constant $\alpha$ at a high value results in smoother inverted parameter values and fewer boundaries. Therefore, if a detailed image of a subsurface region is desired, the constant $\alpha$ must be kept small. 
+Figure~\ref{fig:102} displays one-dimensional plots of the true and recovered velocities from Figures~\ref{fig:1a}-~\ref{fig:1c} at $x = 6$ km. Figure~\ref{fig:102} confirms that the recovered velocity is smoother when $\alpha = 100$ than when $\alpha = 10$. This observation is true in general: setting the constant $\alpha$ at a high value results in smoother inverted parameter values and fewer boundaries. Therefore, if a detailed image of a subsurface region is desired, the constant $\alpha$ must be kept small. 
 
 \sendatend{
 \begin{figure}
