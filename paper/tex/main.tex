@@ -183,10 +183,10 @@ Figure~\ref{fig:2} displays one-dimensional plots of the true and recovered velo
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{201.png} \label{fig:201a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{202.png} \label{fig:201b}}
+\subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{3a.png} \label{fig:3a}}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{3b.png} \label{fig:3b}}
 \caption{(a) True isotropic permeability field and (b) the pressure profile obtained from this permeability field.}
-\label{fig:201}
+\label{fig:3}
 \end{figure}
 }
 
@@ -202,7 +202,7 @@ The next two examples consider the inversion of the permeability tensor of a sub
 Next, three numerical examples are studied to compare the Mumford-Shah-based inversion technique to the conventional cell-based inversion technique discussed above. Each of the Mumford-Shah-based inversions consists of the minimization of equation~\ref{eq:shape} using the Ambrosio-Tortorelli approximation as described in equation~\ref{eq:epsilon} and the regularization function $F$ of equation~\ref{eq:Tikhonov}.  Each of the cell-based inversions consists of the minimization of equation~\ref{eq:objective}.  All minimizations are carried out on a regular Cartesian mesh discretization using inexact Gauss-Newton.  In the first two examples, ten iterations are used; for the third example, fifty iterations are used.  For convenience, all of the examples presented here are two dimensional.  However, Mumford-Shah-based inversion may be carried out in any number of spatial dimensions using the procedure described above.  
 \end{comment}
 
-Our first example is based on the permeability field found in figure~\ref{fig:201a} and the associated pressure profile found in Figure~\ref{fig:201b}.  Pressure is defined according to equation~\ref{eq:onephase} and a Dirichlet boundary condition
+Our first example is based on the permeability field found in figure~\ref{fig:3a} and the associated pressure profile found in Figure~\ref{fig:3b}.  Pressure is defined according to equation~\ref{eq:onephase} and a Dirichlet boundary condition
 \begin{equation} \label{eq:onephase}
 -\nabla \cdot \left( \kappa (x)\nabla p(x) \right)=s(x).
 \end{equation}
