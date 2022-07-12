@@ -213,161 +213,161 @@ For inversion purposes, we assume that measured pressure values throughout the d
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{203.png} \label{fig:203a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{204.png} \label{fig:203b}}
+\subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{4a.png} \label{fig:4a}}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{4b.png} \label{fig:4b}}
 \caption{Permeability fields resulting from two conventional cell-based inversion techniques, (a) one without and (b) the other with a Tikhonov regularization term.}
-\label{fig:203}
+\label{fig:4}
 \end{figure}
 }
 
-Figure~\ref{fig:203} illustrates permeability fields resulting from two conventional cell-based inversion techniques, one without regularization and the other with Tikhonov regularization.  While the cell-based inversion technique without the regularization term recovers some of the large-scale features of the original model, it also contains high-frequency artifacts and does not properly capture the smooth background permeability field. The addition of Tikhonov regularization stabilizes the cell-based inversion technique.  However, the resulting permeability field smears out the background and the boundaries of the annular region. 
+Figure~\ref{fig:4} illustrates permeability fields resulting from two conventional cell-based inversion techniques, one without regularization and the other with Tikhonov regularization.  While the cell-based inversion technique without the regularization term recovers some of the large-scale features of the original model, it also contains high-frequency artifacts and does not properly capture the smooth background permeability field. The addition of Tikhonov regularization stabilizes the cell-based inversion technique.  However, the resulting permeability field smears out the background and the boundaries of the annular region. 
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{205.png} \label{fig:205a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{206.png} \label{fig:205b}}
+\subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{5a.png} \label{fig:5a}}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{5b.png} \label{fig:5b}}
 \caption{(a) The inverted permeability field and (b) the interface set $\phi_\epsilon$ obtained from the Mumford-Shah-based inversion technique.}
-\label{fig:205}
+\label{fig:5}
 \end{figure}
 }
-Figure~\ref{fig:205} illustrates the permeability field and the order parameter $\phi_\epsilon$ resulting from the Mumford-Shah-based inversion technique.  There are two aspects of this result worth pointing out.  First, the original permeability field is stably recovered. Second, the interfaces separating regions of smoothness are correctly identified by the zero contour of $\phi_\epsilon$.
+Figure~\ref{fig:5} illustrates the permeability field and the order parameter $\phi_\epsilon$ resulting from the Mumford-Shah-based inversion technique.  There are two aspects of this result worth pointing out.  First, the original permeability field is stably recovered. Second, the interfaces separating regions of smoothness are correctly identified by the zero contour of $\phi_\epsilon$.
 
 \sendatend{
 \begin{figure}
 \centering
- \includegraphics[scale=0.6]{207.png} 
+ \includegraphics[scale=0.6]{6.png} 
 \caption{Comparing data misfits versus number of iterations for the cell-based and Mumfard-Shah inversion techniques.}
-\label{fig:207}
+\label{fig:6}
 \end{figure}
 }
 
-Figure~\ref{fig:207} compares the data misfit (using a logarithmic scale) versus the number of iterations for the cell-based and the Mumford-Shah-based inversions.  The Mumford-Shah inversion quickly converges to the correct model whereas the data misfit for the cell-based inversions decreases at a significantly slower rate.
+Figure~\ref{fig:6} compares the data misfit (using a logarithmic scale) versus the number of iterations for the cell-based and the Mumford-Shah-based inversions.  The Mumford-Shah inversion quickly converges to the correct model whereas the data misfit for the cell-based inversions decreases at a significantly slower rate.
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{208.png} \label{fig:208a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{209.png} \label{fig:208b}}
-\subfloat[]{\includegraphics[scale=0.5, trim=0 0 0 0, clip]{210.png} \label{fig:208c}}
-\caption{The true anisotropic permeability fields (a) $\kappa_{xx}$ and (b) $\kappa_{zz}$, and the pressure field obtained using equation~\ref{eq:onephase} and permeability fields from (a) and (b).}
-\label{fig:208}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{7a.png} \label{fig:7a}}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{7b.png} \label{fig:7b}}
+\subfloat[]{\includegraphics[scale=0.5, trim=0 0 0 0, clip]{7c.png} \label{fig:7c}}
+\caption{The true anisotropic permeability fields (a) $\kappa_{xx}/\kappa_{Ref}$ and (b) $\kappa_{zz}/\kappa{Ref}$, and the pressure field obtained using equation~\ref{eq:onephase} and permeability fields from (a) and (b).}
+\label{fig:7}
 \end{figure}
 }
 
 \subsection{Multi-parameter One-phase Flow}
 For our next example, we seek to identify an anisotropic permeability tensor from the associated fluid pressure measurements.  In practice, anisotropy of the permeability tensor is common and is a natural consequence of the layered nature of the subsurface.  As a result, horizontal permeability values often differ from vertical ones.
 
-Our next example is based on the anisotropic permeability model displayed in Figures~\ref{fig:208a} and~\ref{fig:208b}.  Due to anisotropy, $\kappa_{xx} \neq \kappa_{zz}$; however, $\kappa_{xx}$ and $\kappa_{zz}$ do share a common set of interfaces.  As in the previous example, the pressure profile (see Figure ~\ref{fig:208c}) is  computed by solving equation~\ref{eq:onephase} using the zero Dirichlet boundary condition and $s(x) \equiv 1$.  
+Our next example is based on the anisotropic permeability model displayed in Figures~\ref{fig:7a} and~\ref{fig:7b}.  Due to anisotropy, $\kappa_{xx} \neq \kappa_{zz}$; however, $\kappa_{xx}$ and $\kappa_{zz}$ do share a common set of interfaces.  As in the previous example, the pressure profile (see Figure ~\ref{fig:7c}) is  computed by solving equation~\ref{eq:onephase} using the zero Dirichlet boundary condition and $s(x) \equiv 1$.  
 
 For inversion purposes, we assume that measured pressure values throughout the domain are available.  In addition, we use an initial guess of $\kappa_{xx}=\kappa_{zz}=1$.  The Mumford-Shah-inversion additionally uses the initial guess $\phi_\epsilon=1$ (i.e., $\Gamma=\emptyset$).
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{211.png} \label{fig:211a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{212.png} \label{fig:211b}}
-\caption{The inverted anistropic permeability fields (a) $\kappa_{xx}$ and (b) $\kappa_{zz}$ resulting from the conventional cell-based inversion.}
-\label{fig:211}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{8a.png} \label{fig:8a}}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{8b.png} \label{fig:8b}}
+\caption{The inverted anistropic permeability fields (a) $\kappa_{xx}/\kappa_{Ref}$ and (b) $\kappa_{zz}/\kappa_{Ref}$ resulting from the conventional cell-based inversion.}
+\label{fig:8}
 \end{figure}
 }
 
-Figure~\ref{fig:211} illustrates the permeability tensor resulting from the cell-based inversion without regularization.  Since the cell-based inversion formulation does not enforce a spatial correlation between the inverted tensor components, the result is non-unique and unstable.  In contrast, the inverted permeability tensor based on Mumford-Shah is well-structured and the interface set is correctly identified (see Figure~\ref{fig:213}).  
+Figure~\ref{fig:8} illustrates the permeability tensor resulting from the cell-based inversion without regularization.  Since the cell-based inversion formulation does not enforce a spatial correlation between the inverted tensor components, the result is non-unique and unstable.  In contrast, the inverted permeability tensor based on Mumford-Shah is well-structured and the interface set is correctly identified (see Figure~\ref{fig:9}).  
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{213.png} \label{fig:213a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{214.png} \label{fig:213b}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{215.png} \label{fig:213c}}
-\caption{The inverted permeability tensor components (a) $\kappa_{xx}$, (b) $\kappa_{zz}$, and (c) the interface set $\phi_\epsilon$ resulting from the Mumford-Shah-based inversion.}
-\label{fig:213}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{9a.png} \label{fig:9a}}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{9b.png} \label{fig:9b}}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{9c.png} \label{fig:9c}}
+\caption{The inverted permeability tensor components (a) $\kappa_{xx}/\kappa_{Ref}$, (b) $\kappa_{zz}/\kappa_{Ref}$, and (c) the interface set $\phi_\epsilon$ resulting from the Mumford-Shah-based inversion.}
+\label{fig:9}
 \end{figure}
 }
 \sendatend{
 \begin{figure}
 \centering
- \includegraphics[scale=0.6]{216.png}
+ \includegraphics[scale=0.6]{10.png}
 \caption{Comparing data misfit versus number of iterations for the cell-based and Mumfard-Shah inversion techniques.}
- \label{fig:216}
+ \label{fig:10}
 \end{figure}
 }
-Figure~\ref{fig:216} compares the data misfit (on a logarithmic scale) versus the number of iterations for the above results.  Interestingly, both inversions match the data.  This highlights the utility of Mumford-Shah as a regularization scheme that enforces spatial correlations between parameters.  
+Figure~\ref{fig:10} compares the data misfit (on a logarithmic scale) versus the number of iterations for the above results.  Interestingly, both inversions match the data.  This highlights the utility of Mumford-Shah as a regularization scheme that enforces spatial correlations between parameters.  
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{301.png} \label{fig:301a}} \\
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{302.png} \label{fig:301b}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{303.png} \label{fig:301c}}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{11a.png} \label{fig:11a}} \\
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{11b.png} \label{fig:11b}}
+\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{11c.png} \label{fig:11c}}
 \caption{(a) A block velocity model with a linearly sloping background velocity model and (b) seismogram obtained for a source located in the middle of the model and set of 501 receivers spreaded over the surface, and (c) the first-arrival data for 501 sources and 501 receivers spreaded over the surface. The red dots on (b) corresponds to the first-arrival times on the seismogram.}
-\label{fig:301}
+\label{fig:11}
 \end{figure}
 }
 
 \subsection{First-arrival Travel Time Tomography}
-For our next example, we recover the location of an anomalous homogeneous body using first-arrival travel time data.  The subsurface model in this case is illustrated in Figure~\ref{fig:301a}.  The anomalous body is a rectangular region with constant wave speed of 4.5 km/s.  The background wave speed, linearly-varying, is equal to 1.5 km/s at the top surface (depth = 0 km) and 4.0 km/s at a depth = 4 km.  Five hundred and one seismic sources and five hundred and one seismic receivers are placed equidistantly on the top surface of the region from x = 0 km to 20 km. In consideration of realistic seismic surveys such as towed-streamer seismic acquisition, each receiver is limited to listening to sources within 10 km.  In other words, the maximum source-receiver offset is 10 km.   An example of a seismogram, due to a source located at x = 10 km, is shown in Figure~\ref{fig:301b}; the red line corresponds to the first-arrival times.
+For our next example, we recover the location of an anomalous homogeneous body using first-arrival travel time data.  The subsurface model in this case is illustrated in Figure~\ref{fig:11a}.  The anomalous body is a rectangular region with constant wave speed of 4.5 km/s.  The background wave speed, linearly-varying, is equal to 1.5 km/s at the top surface (depth = 0 km) and 4.0 km/s at a depth = 4 km.  Five hundred and one seismic sources and five hundred and one seismic receivers are placed equidistantly on the top surface of the region from x = 0 km to 20 km. In consideration of realistic seismic surveys such as towed-streamer seismic acquisition, each receiver is limited to listening to sources within 10 km.  In other words, the maximum source-receiver offset is 10 km.   An example of a seismogram, due to a source located at x = 10 km, is shown in Figure~\ref{fig:11b}; the red line corresponds to the first-arrival times.
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45,trim=0 12 0 0, clip]{304.png} \label{fig:304a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=12 12 0 0, clip]{305.png} \label{fig:304b}}\\
-\subfloat[]{\includegraphics[scale=0.45]{306.png} \label{fig:304c}}
-\subfloat[]{\includegraphics[scale=0.45, trim=12 0 0 0, clip]{307.png} \label{fig:304d}}
+\subfloat[]{\includegraphics[scale=0.45,trim=0 12 0 0, clip]{12a.png} \label{fig:12a}}
+\subfloat[]{\includegraphics[scale=0.45, trim=12 12 0 0, clip]{12b.png} \label{fig:12b}}\\
+\subfloat[]{\includegraphics[scale=0.45]{12c.png} \label{fig:12c}}
+\subfloat[]{\includegraphics[scale=0.45, trim=12 0 0 0, clip]{12d.png} \label{fig:12d}}
 \caption{(a) The background velocity model as the initial guess, (b) the velocity model inverted using the conventional cell-based inversion, (c) the velocity model inverted using Mumford-Shah inversion, and (d) the boundary set obtained from Mumford-Shah inversion. }
-\label{fig:304}
+\label{fig:12}
 \end{figure}
 }
 
-The available data in this example are the first-arrival times associated with the 501 sources and 501 receivers, as illustrated in Figure~\ref{fig:301c}.  First-arrival travel times T for both data generation and inversion are computed by solving the Eikonal equation
+The available data in this example are the first-arrival times associated with the 501 sources and 501 receivers, as illustrated in Figure~\ref{fig:11c}.  First-arrival travel times T for both data generation and inversion are computed by solving the Eikonal equation
 \begin{equation} \label{eq:eikonal}
 \left\vert \nabla T \right\vert = \frac{1}{\kappa} 
 \end{equation}
 with the boundary condition $T\vert_{\Gamma_S}=0$ at the source locations $\Gamma_S$ and the spatially varying wave speed $\kappa$ as given. Equation~\ref{eq:eikonal} is solved by the fast sweeping method~\cite[]{Zhao04}. 
 
-The initial guess for the conventional cell-based inversion technique is the background wave speed profile illustrated in Figure~\ref{fig:304a}.  The initial guess for the Mumford-Shah inversion is the background wave speed profile and $\phi_\epsilon=1$ (i.e., $\Gamma=\emptyset$).  Fifty iterations of inexact Gauss-Newton are used for the cell-based and Mumford-Shah inversions.  
+The initial guess for the conventional cell-based inversion technique is the background wave speed profile illustrated in Figure~\ref{fig:12a}.  The initial guess for the Mumford-Shah inversion is the background wave speed profile and $\phi_\epsilon=1$ (i.e., $\Gamma=\emptyset$).  Fifty iterations of inexact Gauss-Newton are used for the cell-based and Mumford-Shah inversions.  
 
-The wave speed from the cell-based inversion is illustrated in Figure~\ref{fig:304b}.  Note that no regularization is included.  The wave speed and inverted interface set $\phi_\epsilon$ from the Mumford-Shah inversion are illustrated in Figure~\ref{fig:304c} and Figure~\ref{fig:304d}, respectively.  A comparison of Figures~\ref{fig:304b} and ~\ref{fig:304c} indicates that the wave speed recovered by Mumford-Shah represents an improvement over the cell-based inversion method.
+The wave speed from the cell-based inversion is illustrated in Figure~\ref{fig:12b}.  Note that no regularization is included.  The wave speed and inverted interface set $\phi_\epsilon$ from the Mumford-Shah inversion are illustrated in Figure~\ref{fig:12c} and Figure~\ref{fig:12d}, respectively.  A comparison of Figures~\ref{fig:12b} and ~\ref{fig:12c} indicates that the wave speed recovered by Mumford-Shah represents an improvement over the cell-based inversion method.
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{401.png} \label{fig:401a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{402.png} \label{fig:401b}}
-\caption{(a) The phase-field function $\phi_\epsilon$ resulting from phase-field inversion and (b) is the corresponding velocity model using equation~\ref{eq:pf_kappa}}
-\label{fig:401}
+\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{13a.png} \label{fig:13a}}
+\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{13b.png} \label{fig:13b}}
+\caption{(a) The phase-field function $\phi_\epsilon$ resulting from phase-field inversion and (b) is the corresponding velocity model using equation~\ref{eq:pf_kappa}.}
+\label{fig:13}
 \end{figure}
 }
 
-However the anomalous target is not fully recovered by Mumford-Shah inversion as observed from Figure~\ref{fig:304c}. To improve the Mumford-Shah inversion results, we make use of the phase-field method. We will attempt to determine the location of the same anomalous body using phase-field method with the same first-arrival travel time data illustrated in Figure~\ref{fig:301}.
+However the anomalous target is not fully recovered by Mumford-Shah inversion as observed from Figure~\ref{fig:12c}. To improve the Mumford-Shah inversion results, we make use of the phase-field method. We will attempt to determine the location of the same anomalous body using phase-field method with the same first-arrival travel time data illustrated in Figure~\ref{fig:11}.
 
-This phase-field inversion optimizes equation~\ref{eq:pf_epsilon} using the representation of $\kappa$ given by equation~\ref{eq:pf_kappa}. The inversion is performed on a regular Cartesian mesh using fifty iterations of inexact Gauss-Newton similar to the previous Mumford-Shah inversion. The initial guess is the same background wave speed profile illustrated in Figure~\ref{fig:304a}; for phase-field, this amounts to an initial guess of $\phi=-1$.  For phase-field, we assume the parameters values $\kappa_i$ in equation~\ref{eq:pf_kappa} are fixed and only infer for the phase-field function $\phi$ which partitions the subsurface into two shapes $\{\Omega_1,\Omega_2 \}$. The domain $\Omega_1$ represents the anomalous body and the domain $\Omega_2$ represents the surrounding background. The parameter value $\kappa_1$ represents the wave speed within the anomalous body and is fixed at 4.5 km/s. The parameter value $\kappa_2$ is fixed to be the background wave speed profile, as shown in Figure~\ref{fig:304a}.
+This phase-field inversion optimizes equation~\ref{eq:pf_epsilon} using the representation of $\kappa$ given by equation~\ref{eq:pf_kappa}. The inversion is performed on a regular Cartesian mesh using fifty iterations of inexact Gauss-Newton similar to the previous Mumford-Shah inversion. The initial guess is the same background wave speed profile illustrated in Figure~\ref{fig:12a}; for phase-field, this amounts to an initial guess of $\phi=-1$.  For phase-field, we assume the parameters values $\kappa_i$ in equation~\ref{eq:pf_kappa} are fixed and only infer for the phase-field function $\phi$ which partitions the subsurface into two shapes $\{\Omega_1,\Omega_2 \}$. The domain $\Omega_1$ represents the anomalous body and the domain $\Omega_2$ represents the surrounding background. The parameter value $\kappa_1$ represents the wave speed within the anomalous body and is fixed at 4.5 km/s. The parameter value $\kappa_2$ is fixed to be the background wave speed profile, as shown in Figure~\ref{fig:12a}.
 
-Figure~\ref{fig:401b} illustrates the wave speed obtained from phase-field.  This is obtained by plugging in the optimized phase-field function $\phi_\epsilon$, illustrated in Figure~\ref{fig:401a}, into equation~\ref{eq:pf_kappa}.  Figure~\ref{fig:401a} demonstrates that the phase-field function $\phi_\epsilon$ demarcates two shapes with a narrow transition region where $\phi_\epsilon$ transitions from a value of 1 to a value of -1. The phase-field inversion (Figure~\ref{fig:401b}) results in an improved construction of the anomalous target as compared to both the cell-based and Mumford-Shah inversions (Figures~\ref{fig:304b} and~\ref{fig:304c} respectively).
+Figure~\ref{fig:13b} illustrates the wave speed obtained from phase-field.  This is obtained by plugging in the optimized phase-field function $\phi_\epsilon$, illustrated in Figure~\ref{fig:13a}, into equation~\ref{eq:pf_kappa}.  Figure~\ref{fig:13a} demonstrates that the phase-field function $\phi_\epsilon$ demarcates two shapes with a narrow transition region where $\phi_\epsilon$ transitions from a value of 1 to a value of -1. The phase-field inversion (Figure~\ref{fig:13b}) results in an improved construction of the anomalous target as compared to both the cell-based and Mumford-Shah inversions (Figures~\ref{fig:12b} and~\ref{fig:12c} respectively).
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.5,trim=0 0 0 -40, clip]{501.png} \label{fig:501a}}
-\subfloat[]{\includegraphics[scale=0.5, trim=0 0 0 0, clip]{502.png} \label{fig:501b}}
+\subfloat[]{\includegraphics[scale=0.5,trim=0 0 0 -40, clip]{14a.png} \label{fig:14a}}
+\subfloat[]{\includegraphics[scale=0.5, trim=0 0 0 0, clip]{14b.png} \label{fig:14b}}
 \caption{(a) Differential density model ($\Delta\rho$) and (b) surface measurement of gravity based on the density difference model in (a).}
-\label{fig:501}
+\label{fig:14}
 \end{figure}
 }
 
 \subsection{Gravity}
 This example seeks to determine the location of the same anomaly as the previous example, but this time using only gravity data. 
 
-Gravity data are generated using the subsurface density model illustrated in Figure~\ref{fig:501a}.  The model assumes a uniform background density and an anomalous rectangular region with $-20 g/cm^3$ density difference relative to the background, as shown in Figure~\ref{fig:501a}. In reality, the background density vary in depth, but for the simplicity of this example we assume that it is constant in depth. Both Mumford-Shah and phase-field inversion methods can be employed for any spatial distributions of inversion parameters as already demonstrated. Note that the density and velocity models share the same boundary set, as can be observed from Figures~\ref{fig:301a} and~\ref{fig:501a}.  
+Gravity data are generated using the subsurface density model illustrated in Figure~\ref{fig:14a}.  The model assumes a uniform background density and an anomalous rectangular region with $-20 g/cm^3$ density difference relative to the background, as shown in Figure~\ref{fig:14a}. In reality, the background density vary in depth, but for the simplicity of this example we assume that it is constant in depth. Both Mumford-Shah and phase-field inversion methods can be employed for any spatial distributions of inversion parameters as already demonstrated. Note that the density and velocity models share the same boundary set, as can be observed from Figures~\ref{fig:11a} and~\ref{fig:14a}.  
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{503B.png} \label{fig:505a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{506.png} \label{fig:505b}}
-\caption{The inversion results from (a) cell-based inversion and (b) phase-field inversion of data provided in Figure~\ref{fig:501b}.}
-\label{fig:505}
+\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{15a.png} \label{fig:15a}}
+\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{15b.png} \label{fig:15b}}
+\caption{The inversion results from (a) cell-based inversion and (b) phase-field inversion of data provided in Figure~\ref{fig:14b}.}
+\label{fig:15}
 \end{figure}
 }
 
@@ -381,46 +381,46 @@ and using the relationship $g_z=\partial U / \partial z$.  Here, $\nabla^2$ is t
 \Delta \rho (x) = \begin{cases} \Delta \rho_a &  \text{if}~x \in \text{anomaly} \\ 0 & \text{if}~x \not\in \text{anomaly} \end{cases}.
 \end{equation}
 
-Gravity measurements are made at 501 locations at 300 m above the top surface of the domain.  The gravity measurements for the target model are provided in Figure~\ref{fig:501b}. 
+Gravity measurements are made at 501 locations at 300 m above the top surface of the domain.  The gravity measurements for the target model are provided in Figure~\ref{fig:14b}. 
 
 The initial guess for both inversions is the background model (i.e. no presence of the anomaly).  Both optimizations are run for fifty iterations of inexact Gauss-Newton.  Similar to the previous example, the phase-field inversion assumes as known the density anomaly value $\Delta \rho_a$ corresponding to the density increment due to the anomaly associated with domain $\Omega_1$; the remaining unknown is the phase-field function $\phi$ determining the regions $\Omega_1$ and $\Omega_2$. We may compute the density update from the phase-field parameter using equation~\ref{eq:pf_deltarho} below
 \begin{equation} \label{eq:pf_deltarho}
 \Delta \rho (x)=\frac{1-\phi(x)}{2} \Delta \rho_a.
 \end{equation}
 
-Figure~\ref{fig:505a} illustrates the density anomaly resulting from the cell-based inversion; note that no regularization term is included here.  Figure \ref{fig:505b} illustrates the density anomaly resulting from phase-field inversion.  Not surprisingly, neither the conventional cell-based inversion technique nor the phase-field inversion technique accurately locates the anomalous body due to the Laplacian smoothing present in equation~\ref{eq:gravity} and the limited measurements available above the domain.
+Figure~\ref{fig:15a} illustrates the density anomaly resulting from the cell-based inversion; note that no regularization term is included here.  Figure \ref{fig:15b} illustrates the density anomaly resulting from phase-field inversion.  Not surprisingly, neither the conventional cell-based inversion technique nor the phase-field inversion technique accurately locates the anomalous body due to the Laplacian smoothing present in equation~\ref{eq:gravity} and the limited measurements available above the domain.
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{601.png} \label{fig:601a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{602.png} \label{fig:601b}}
-\caption{The phase-field inversion results using joint travel-time (Figure~\ref{fig:301c}) and gravity data  (Figure~\ref{fig:501b}) for (a) the wave velocity and (b) differential density.}
-\label{fig:601}
+\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{16a.png} \label{fig:16a}}
+\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{16b.png} \label{fig:16b}}
+\caption{The phase-field inversion results using joint travel-time (Figure~\ref{fig:11c}) and gravity data  (Figure~\ref{fig:14b}) for (a) the wave velocity and (b) differential density.}
+\label{fig:16}
 \end{figure}
 }
 
 \subsection{Joint Travel-time and Gravity}
 
-In this example, we seek to determine the location of the anomalous body using both first-arrival travel time data and gravity data anomaly data. The initial guesses for wave speed (Figure~\ref{fig:301a}) and density (Figure~\ref{fig:501a}) remain unchanged from the earlier examples. 
+In this example, we seek to determine the location of the anomalous body using both first-arrival travel time data and gravity data anomaly data. The initial guesses for wave speed (Figure~\ref{fig:11a}) and density (Figure~\ref{fig:14a}) remain unchanged from the earlier examples. 
 
-The density and wave-speed profiles for the cell-based inversion are identical to those obtained in the previous examples since the cell-based approach does not couple density and wave speed.  Figure~\ref{fig:304b} represents the inverted wave speed profile in this case and Figure~\ref{fig:505b} represents the inverted density profile. Figure~\ref{fig:601} displays the inverted wave speed and density profiles for the joint phase-field inversion, along with the phase-field function $\phi_\epsilon$. Joint inversion greatly improves the estimation of density and provides some uplift to wave speed.
+The density and wave-speed profiles for the cell-based inversion are identical to those obtained in the previous examples since the cell-based approach does not couple density and wave speed.  Figure~\ref{fig:12b} represents the inverted wave speed profile in this case and Figure~\ref{fig:15b} represents the inverted density profile. Figure~\ref{fig:16} displays the inverted wave speed and density profiles for the joint phase-field inversion, along with the phase-field function $\phi_\epsilon$. Joint inversion greatly improves the estimation of density and provides some uplift to wave speed.
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{604.png} \label{fig:604a}}
-\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{605.png} \label{fig:604b}} \\
-\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{606.png} \label{fig:604c}}
-\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{607.png} \label{fig:604d}}
+\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{17a.png} \label{fig:17a}}
+\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{17b.png} \label{fig:17b}} \\
+\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{17c.png} \label{fig:17c}}
+\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{17d.png} \label{fig:17d}}
 \caption{(a) Travel-time data misfit, (b) velocity model misfit, (c) gravity data misfit and (d) density model misfit verus number of iterations for inversions with cell-based and phase-field techniques.}
-\label{fig:604}
+\label{fig:17}
 \end{figure}
 }
 
-Figures~\ref{fig:604a} and~\ref{fig:604b} display the first-arrival travel time data misfit and wave speed model misfit versus the number of iterations.  Three aspects of these plots stand out.  First, Figure ~\ref{fig:604a} indicates that the data misfit decreases monotonically for the cell-based inversion but does not for the phase-field inversions.  This is due to the geometric regularization terms present in the phase-field inversion.  As a result, the overall objective in the phase-field inversions decreases monotonically but the data misfit is not guaranteed to do so.   Second, Figure ~\ref{fig:604b} indicates that the model misfit for the phase-field inversions is orders of magnitude smaller than for the cell-based inversion. This can be confirmed visually by comparing Figures~\ref{fig:304b},~\ref{fig:401b}, and~\ref{fig:601a} to the ground truth, Figure~\ref{fig:301a}.  Third, data and model misfit are comparable for phase-field inversion of travel-time data alone and joint phase-field inversion of travel-time and gravity data.   
+Figures~\ref{fig:17a} and~\ref{fig:17b} display the first-arrival travel time data misfit and wave speed model misfit versus the number of iterations.  Three aspects of these plots stand out.  First, Figure ~\ref{fig:17a} indicates that the data misfit decreases monotonically for the cell-based inversion but does not for the phase-field inversions.  This is due to the geometric regularization terms present in the phase-field inversion.  As a result, the overall objective in the phase-field inversions decreases monotonically but the data misfit is not guaranteed to do so.   Second, Figure ~\ref{fig:17b} indicates that the model misfit for the phase-field inversions is orders of magnitude smaller than for the cell-based inversion. This can be confirmed visually by comparing Figures~\ref{fig:12b},~\ref{fig:13b}, and~\ref{fig:16a} to the ground truth, Figure~\ref{fig:11a}.  Third, data and model misfit are comparable for phase-field inversion of travel-time data alone and joint phase-field inversion of travel-time and gravity data.   
 
-Figures~\ref{fig:604c} and~\ref{fig:604d} plot the gravity data misfit and density model misfit versus the number of iterations. Two aspects of the plots stand out.  First, Figure~\ref{fig:604d}, demonstrates that the model misfit for the joint phase-field inversion of gravity and travel-time data is significantly smaller than the cell-based approach or the phase-field approach using only gravity data. This superior convergence can be visually observed by comparing the density in Figures ~\ref{fig:505a}, ~\ref{fig:505b}, and ~\ref{fig:601b} to the true density anomaly in Figure ~\ref{fig:501a}. Second, the relatively small voxelized data misfit in Figure \ref{fig:604c}, despite the relatively large voxelized model misfit in \ref{fig:604d}, reflects the non-uniqueness of inverting gravity data and highlights the utility of imposing additional shape-based constraints.
+Figures~\ref{fig:17c} and~\ref{fig:17d} plot the gravity data misfit and density model misfit versus the number of iterations. Two aspects of the plots stand out.  First, Figure~\ref{fig:17d}, demonstrates that the model misfit for the joint phase-field inversion of gravity and travel-time data is significantly smaller than the cell-based approach or the phase-field approach using only gravity data. This superior convergence can be visually observed by comparing the density in Figures ~\ref{fig:15a}, ~\ref{fig:15b}, and ~\ref{fig:16b} to the true density anomaly in Figure ~\ref{fig:14a}. Second, the relatively small voxelized data misfit in Figure \ref{fig:17c}, despite the relatively large voxelized model misfit in \ref{fig:17d}, reflects the non-uniqueness of inverting gravity data and highlights the utility of imposing additional shape-based constraints.
 
 \begin{comment}
 The fourth example investigates the impact of a shape-based constraint on the identification of two anomalous homogeneous bodies from acoustic pressure measurements.  The setup is identical to the fourth example of the Mumford-Shah inversion technique.  The phase-field inversion technique, under the additional constraint that the total volume of the two anomalies is known, is compared to the unconstrained phase-field inversion technique.  In practice, an estimate of the anomalies’ volume may be obtained using gravity data.  
@@ -439,10 +439,10 @@ Figure ~\ref{fig:804} compares the model misfit versus the number of iterations 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45,trim=0 0 0 0, clip]{701.png} \label{fig:701a}}
-\subfloat[]{\includegraphics[scale=0.445, trim=0 0 0 -27, clip]{702.png} \label{fig:701b}}
+\subfloat[]{\includegraphics[scale=0.45,trim=0 0 0 0, clip]{18a.png} \label{fig:18a}}
+\subfloat[]{\includegraphics[scale=0.445, trim=0 0 0 -27, clip]{18b.png} \label{fig:18b}}
 \caption{(a) A modified Marmousi model with anomalous two salt geobodies and (b) an initial guess without presences of geobodies.}
-\label{fig:701}
+\label{fig:18}
 \end{figure}
 }
 
@@ -451,7 +451,7 @@ Figure ~\ref{fig:804} compares the model misfit versus the number of iterations 
 Our final example is seismic waveform inversion which is also referred as full-waveform inversion (FWI).
 It differs from the previous ones in three important ways.  First, in each of our previous examples the subsurface geometry consisted of a small number of shapes.  In this example, we consider a subsurface region possessing a large number of layers and two anomalous bodies. Second, we utilize full seismic waveform data which is relatively more complex than the previous geophysical data types. Third, it highlights the potential uplift from annealing strategies applied to Mumford-Shah.  
 
-The subsurface model selected for this example is shown in Figure~\ref{fig:701a}.  It is 3.1 km deep by 17 km wide and consists of the Marmousi wave speed model with anomalies overlaid.  100 seismic sources and 500 seismic receivers are placed equidistantly on the top surface of the subsurface region from $x = 0.25$km to $16.75$km.  
+The subsurface model selected for this example is shown in Figure~\ref{fig:18a}.  It is 3.1 km deep by 17 km wide and consists of the Marmousi wave speed model with anomalies overlaid.  100 seismic sources and 500 seismic receivers are placed equidistantly on the top surface of the subsurface region from $x = 0.25$km to $16.75$km.  
 
 Seismic measurements $p$ are computed by solving the acoustic wave equation with the free boundary conditions on the top surface and the absorbing boundary conditions along the other boundaries.  
 \begin{align}
@@ -465,23 +465,23 @@ The density $\rho$ is set equal to 1 g/cm$^3$.  The source f corresponds to a 2 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45,trim=0 0 0 0, clip]{704.png} \label{fig:704a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{705.png} \label{fig:704b}}
+\subfloat[]{\includegraphics[scale=0.45,trim=0 0 0 0, clip]{19a.png} \label{fig:19a}}
+\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{19b.png} \label{fig:19b}}
 \caption{(a) The velocity model and boundary set resulting from Mumfard-Shah inversion.}
-\label{fig:704}
+\label{fig:19}
 \end{figure}
 }
-In this example, we focus exclusively on the Mumford-Shah inversion.  The initial guess is the wave speed profile illustrated in Figure~\ref{fig:701b} and $\phi_\epsilon=1$ (i.e. $\Gamma = \emptyset$).  The initial guess for the wave speed captures some of the large-scale trends of the Marmousi model but does not incorporate any information regarding the anomalies.  Figures~\ref{fig:704} illustrate the inverted wave speed $\kappa(x)$ and the inverted interface set $\phi_\epsilon$. The result demonstrates the ability of Mumford-Shah to determine a large number of interfaces and shapes from acoustic waveforms.
+In this example, we focus exclusively on the Mumford-Shah inversion.  The initial guess is the wave speed profile illustrated in Figure~\ref{fig:18b} and $\phi_\epsilon=1$ (i.e. $\Gamma = \emptyset$).  The initial guess for the wave speed captures some of the large-scale trends of the Marmousi model but does not incorporate any information regarding the anomalies.  Figures~\ref{fig:19} illustrate the inverted wave speed $\kappa(x)$ and the inverted interface set $\phi_\epsilon$. The result demonstrates the ability of Mumford-Shah to determine a large number of interfaces and shapes from acoustic waveforms.
 
-The determination of the wave speed and the boundary set requires a multi-stage approach. In the first stage, equation~\ref{eq:epsilon} is minimized using $\beta=10^{-7}$.  In the second stage, the value of $\beta$ is decreased to $\beta=10^{-8}$.  In the third stage, the value of $\beta$ is decreased to $\beta =10^{-9}$.  The data misfit and model misfit versus the number of iterations are plotted in Figure~\ref{fig:706}. The branch points in Figure~\ref{fig:706} indicate where the value of $\beta$ is decreased.  Figure~\ref{fig:706} illustrates that  keeping $\beta$ fixed leads to a plateau in data and model misfit while a strategic decrease in $\beta$ results in a decrease in both data and model misfit.
+The determination of the wave speed and the boundary set requires a multi-stage approach. In the first stage, equation~\ref{eq:epsilon} is minimized using $\beta=10^{-7}$.  In the second stage, the value of $\beta$ is decreased to $\beta=10^{-8}$.  In the third stage, the value of $\beta$ is decreased to $\beta =10^{-9}$.  The data misfit and model misfit versus the number of iterations are plotted in Figure~\ref{fig:20}. The branch points in Figure~\ref{fig:20} indicate where the value of $\beta$ is decreased.  Figure~\ref{fig:20} illustrates that  keeping $\beta$ fixed leads to a plateau in data and model misfit while a strategic decrease in $\beta$ results in a decrease in both data and model misfit.
 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.3,trim=0 0 0 0, clip]{706.png} \label{fig:706a}}
-\subfloat[]{\includegraphics[scale=0.3, trim=0 0 0 0, clip]{707.png} \label{fig:706b}}
+\subfloat[]{\includegraphics[scale=0.3,trim=0 0 0 0, clip]{20a.png} \label{fig:20a}}
+\subfloat[]{\includegraphics[scale=0.3, trim=0 0 0 0, clip]{20b.png} \label{fig:20b}}
 \caption{Mumford-Shah inversion: (a) data and (b) model misfits with the number of iterations.}
-\label{fig:706}
+\label{fig:20}
 \end{figure}
 }
 
