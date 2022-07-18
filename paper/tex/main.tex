@@ -52,7 +52,7 @@ Many geophysical inverse problems, especially multi-parameter problems (e.g. ful
 
 In this paper, we introduce geophysical inversion techniques that mitigate non-uniqueness by constraining the unknown physical parameters to be structurally consistent.  Structural consistency of two parameters means that the parameters share a common set of interfaces across which the parameters' profiles  change abruptly.  Since many geologic parameters exhibit such a relationship (e.g. wave speed and density), structural consistency is a natural constraint to impose on multi-parameter inverse problems.  
 
-Three distinct approaches to enforcing structural consistency were proposed previously.  The first links the different unknown parameters through geophysical or empirical relationships (e.g., Archie’s law) and inverts for a minimal subset of the parameters. When well-known relationships between parameters are available, this approach has great appeal. However, such relationships are, in many cases, either poorly understood or unknown completely, rendering this approach of limited value.  The second approach, known as the cross-gradient approach, inverts for two distinct physical parameters by introducing an additional term into the objective function which penalizes gradients that are not collinear \cite[]{Haber_1997,Gallardo_2007}. As a result, this approach encourages structural consistency, but it does not strictly enforce it. In addition, it is unclear how this approach generalizes to an arbitrary number of different physical parameters. 
+Three distinct approaches to enforcing structural consistency have been proposed previously.  The first links the different unknown parameters through geophysical or empirical relationships (e.g., Archie’s law) and inverts for a minimal subset of the parameters. When well-known relationships between parameters are available, this approach has great appeal. However, such relationships are, in many cases, either poorly understood or unknown completely, rendering this approach of limited value.  The second approach, known as the cross-gradient approach, inverts for two distinct physical parameters by introducing an additional term into the objective function which penalizes gradients that are not collinear \cite[]{Haber_1997,Gallardo_2007}. As a result, this approach encourages structural consistency, but it does not strictly enforce it. In addition, it is unclear how this approach generalizes to an arbitrary number of different physical parameters. 
 A third strategy uses level-set functions to represent interfaces between subsurface regions~\cite[]{Kadu_2016}. This approach has been applied to inverse problems such as full-wavefield inversion, gravity inversion~\cite[]{Li_2016}, magnetic inversion~\cite[]{Li_2017}, and reservoir history matching. However, due to the nature of the level-set representation, it is unclear how effective this approach will be for problems with either a large number of distinct subsurface regions or regions with significant heterogeneity. 
 
 \section{Methodology}
@@ -185,7 +185,7 @@ Figure~\ref{fig:2} displays one-dimensional plots of the true and recovered velo
 \centering 
 \subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{3a.png} \label{fig:3a}}
 \subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{3b.png} \label{fig:3b}}
-\caption{(a) True isotropic permeability field and (b) the pressure profile obtained from this permeability field.}
+\caption{(a) True non-dimensional isotropic permeability field ($\kappa/\kappa_{Ref}$) and (b) the non-dimensional pressure profile ($p/p_{Ref}$) obtained from this permeability field. Note that the permeability and pressure fields along with their spatial coordinates (x and z) are non-dimensionalized for the numerical conditioning of the one-phase flow inverse problems.}
 \label{fig:3}
 \end{figure}
 }
@@ -215,7 +215,7 @@ For inversion purposes, we assume that measured pressure values throughout the d
 \centering 
 \subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{4a.png} \label{fig:4a}}
 \subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{4b.png} \label{fig:4b}}
-\caption{Permeability fields resulting from two conventional cell-based inversion techniques, (a) one without and (b) the other with a Tikhonov regularization term.}
+\caption{Permeability fields ($\kappa/\kappa_{Ref}$) resulting from two conventional cell-based inversion techniques, (a) one without and (b) the other with a Tikhonov regularization term.}
 \label{fig:4}
 \end{figure}
 }
@@ -227,7 +227,7 @@ Figure~\ref{fig:4} illustrates permeability fields resulting from two convention
 \centering 
 \subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{5a.png} \label{fig:5a}}
 \subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{5b.png} \label{fig:5b}}
-\caption{(a) The inverted permeability field and (b) the interface set $\phi_\epsilon$ obtained from the Mumford-Shah-based inversion technique.}
+\caption{(a) The inverted non-dimensional permeability field ($\kappa/\kappa_{Ref}$) and (b) the interface set $\phi_\epsilon$ obtained from the Mumford-Shah-based inversion technique.}
 \label{fig:5}
 \end{figure}
 }
@@ -250,7 +250,7 @@ Figure~\ref{fig:6} compares the data misfit (using a logarithmic scale) versus t
 \subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{7a.png} \label{fig:7a}}
 \subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{7b.png} \label{fig:7b}}
 \subfloat[]{\includegraphics[scale=0.5, trim=0 0 0 0, clip]{7c.png} \label{fig:7c}}
-\caption{The true anisotropic permeability fields (a) $\kappa_{xx}/\kappa_{Ref}$ and (b) $\kappa_{zz}/\kappa{Ref}$, and the pressure field obtained using equation~\ref{eq:onephase} and permeability fields from (a) and (b).}
+\caption{The true non-dimensional anisotropic permeability fields (a) $\kappa_{xx}/\kappa_{Ref}$ and (b) $\kappa_{zz}/\kappa_{Ref}$, and the non-dimensional pressure field obtained using equation~\ref{eq:onephase} and permeability fields from (a) and (b).}
 \label{fig:7}
 \end{figure}
 }
@@ -267,7 +267,7 @@ For inversion purposes, we assume that measured pressure values throughout the d
 \centering 
 \subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{8a.png} \label{fig:8a}}
 \subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{8b.png} \label{fig:8b}}
-\caption{The inverted anistropic permeability fields (a) $\kappa_{xx}/\kappa_{Ref}$ and (b) $\kappa_{zz}/\kappa_{Ref}$ resulting from the conventional cell-based inversion.}
+\caption{The inverted non-dimensional anistropic permeability fields (a) $\kappa_{xx}/\kappa_{Ref}$ and (b) $\kappa_{zz}/\kappa_{Ref}$ resulting from the conventional cell-based inversion.}
 \label{fig:8}
 \end{figure}
 }
@@ -280,7 +280,7 @@ Figure~\ref{fig:8} illustrates the permeability tensor resulting from the cell-b
 \subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{9a.png} \label{fig:9a}}
 \subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{9b.png} \label{fig:9b}}
 \subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{9c.png} \label{fig:9c}}
-\caption{The inverted permeability tensor components (a) $\kappa_{xx}/\kappa_{Ref}$, (b) $\kappa_{zz}/\kappa_{Ref}$, and (c) the interface set $\phi_\epsilon$ resulting from the Mumford-Shah-based inversion.}
+\caption{The inverted non-dimensional permeability tensor components (a) $\kappa_{xx}/\kappa_{Ref}$, (b) $\kappa_{zz}/\kappa_{Ref}$, and (c) the interface set $\phi_\epsilon$ resulting from the Mumford-Shah-based inversion.}
 \label{fig:9}
 \end{figure}
 }
