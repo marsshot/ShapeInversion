@@ -1,8 +1,8 @@
 %\documentclass[paper]{geophysics}
-\documentclass[manuscript,revised]{geophysics}
+% \documentclass[manuscript,revised]{geophysics}
+\documentclass[manuscript,final]{geophysics}
 \usepackage{amsmath}
 \usepackage{xcolor}
-%\usepackage{xcolor}
 %\usepackage{graphicx}
 %\usepackage[printfigures]{figcaps}
 %\usepackage{float}
@@ -16,7 +16,7 @@
 
 \newcommand\norm[1]{\left\lVert#1\right\rVert}
 
-\graphicspath{ {../figures/} }
+\graphicspath{ {../figures/eps/} }
 
 \begin{document}
 
@@ -150,10 +150,10 @@ The phase-field approximation in equation~\ref{eq:pf} is conceptually similar to
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45,trim=0 25 0 0, clip]{1a.png} \label{fig:1a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=25 25 0 0, clip]{1b.png} \label{fig:1b}}\\
-\subfloat[]{\includegraphics[scale=0.45]{1c.png} \label{fig:1c}}
-\subfloat[]{\includegraphics[scale=0.45, trim=25 0 0 0, clip]{1d.png} \label{fig:1d}}
+\subfloat[]{\includegraphics[scale=0.15]{1a.eps} \label{fig:1a}}~~
+\subfloat[]{\includegraphics[scale=0.15]{1b.eps} \label{fig:1b}}\\
+\subfloat[]{\includegraphics[scale=0.15]{1c.eps} \label{fig:1c}}~~
+\subfloat[]{\includegraphics[scale=0.15]{1d.eps} \label{fig:1d}}
     \caption{Reconstructions of Marmousi model using the Mumford-Shah shape representation. (a) Marmousi model~\cite[]{Marmousi2} spanning over $17\times3.1$km domain discretized with $0.02\times0.02$km cells (resulting in an $851\times155$ dimensional discretized domain), (b) Mumford-Shah reconstruction with $\alpha=10$ and $\beta=0.01$, (c) reconstruction with $\alpha=100$ and $\beta=0.01$, and (d) the $\phi_{\epsilon}$ field from the reconstruction with $\alpha=10$.}
 \label{fig:101}
 \end{figure}
@@ -162,7 +162,7 @@ The phase-field approximation in equation~\ref{eq:pf} is conceptually similar to
 \sendatend{
 \begin{figure}
 \centering
- \includegraphics[scale=0.6]{2.png}
+ \includegraphics[scale=0.4]{2.eps}
 \caption{Comparisons of Mumfard-Shah reconstructions with $\alpha=10$ and $\alpha=100$ to the true model at $x=6$km vertical slice.}
  \label{fig:2}
 \end{figure}
@@ -185,8 +185,8 @@ Figure~\ref{fig:2} displays one-dimensional plots of the true and recovered velo
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{3a.png} \label{fig:3a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{3b.png} \label{fig:3b}}
+\subfloat[]{\includegraphics[scale=0.2]{3a.eps} \label{fig:3a}}~~
+\subfloat[]{\includegraphics[scale=0.2]{3b.eps} \label{fig:3b}}
 \caption{(a) True non-dimensional isotropic permeability field ($\kappa/\kappa_{Ref}$) and (b) the non-dimensional pressure profile ($p/p_{Ref}$) obtained from this permeability field. Note that the permeability and pressure fields along with their spatial coordinates (x and z) are non-dimensionalized for the numerical conditioning of the one-phase flow inverse problems.}
 \label{fig:3}
 \end{figure}
@@ -215,8 +215,8 @@ For inversion purposes, we assume that measured pressure values throughout the d
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{4a.png} \label{fig:4a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{4b.png} \label{fig:4b}}
+\subfloat[]{\includegraphics[scale=0.2]{4a.eps} \label{fig:4a}}~~
+\subfloat[]{\includegraphics[scale=0.2]{4b.eps} \label{fig:4b}}
 \caption{Permeability fields ($\kappa/\kappa_{Ref}$) resulting from two conventional cell-based inversion techniques, (a) one without and (b) the other with a Tikhonov regularization term.}
 \label{fig:4}
 \end{figure}
@@ -227,8 +227,8 @@ Figure~\ref{fig:4} illustrates permeability fields resulting from two convention
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6,trim=0 0 0 0, clip]{5a.png} \label{fig:5a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{5b.png} \label{fig:5b}}
+\subfloat[]{\includegraphics[scale=0.2]{5a.eps} \label{fig:5a}}~~
+\subfloat[]{\includegraphics[scale=0.2]{5b.eps} \label{fig:5b}}
 \caption{(a) The inverted non-dimensional permeability field ($\kappa/\kappa_{Ref}$) and (b) the interface set $\phi_\epsilon$ obtained from the Mumford-Shah-based inversion technique.}
 \label{fig:5}
 \end{figure}
@@ -238,7 +238,7 @@ Figure~\ref{fig:5} illustrates the permeability field and the order parameter $\
 \sendatend{
 \begin{figure}
 \centering
- \includegraphics[scale=0.6]{6.png} 
+ \includegraphics[scale=0.4]{6.eps} 
 \caption{Comparing data misfits versus number of iterations for the cell-based and Mumfard-Shah inversion techniques.}
 \label{fig:6}
 \end{figure}
@@ -249,9 +249,9 @@ Figure~\ref{fig:6} compares the data misfit (using a logarithmic scale) versus t
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{7a.png} \label{fig:7a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{7b.png} \label{fig:7b}}
-\subfloat[]{\includegraphics[scale=0.5, trim=0 0 0 0, clip]{7c.png} \label{fig:7c}}
+\subfloat[]{\includegraphics[scale=0.2]{7a.eps} \label{fig:7a}}~
+\subfloat[]{\includegraphics[scale=0.2]{7b.eps} \label{fig:7b}}~
+\subfloat[]{\includegraphics[scale=0.166]{7c.eps} \label{fig:7c}}
 \caption{The true non-dimensional anisotropic permeability fields (a) $\kappa_{xx}/\kappa_{Ref}$ and (b) $\kappa_{zz}/\kappa_{Ref}$, and the non-dimensional pressure field obtained using equation~\ref{eq:onephase} and permeability fields from (a) and (b).}
 \label{fig:7}
 \end{figure}
@@ -267,8 +267,8 @@ For inversion purposes, we assume that measured pressure values throughout the d
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{8a.png} \label{fig:8a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{8b.png} \label{fig:8b}}
+\subfloat[]{\includegraphics[scale=0.2]{8a.eps} \label{fig:8a}}~~
+\subfloat[]{\includegraphics[scale=0.2]{8b.eps} \label{fig:8b}}
 \caption{The inverted non-dimensional anistropic permeability fields (a) $\kappa_{xx}/\kappa_{Ref}$ and (b) $\kappa_{zz}/\kappa_{Ref}$ resulting from the conventional cell-based inversion.}
 \label{fig:8}
 \end{figure}
@@ -279,9 +279,9 @@ Figure~\ref{fig:8} illustrates the permeability tensor resulting from the cell-b
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{9a.png} \label{fig:9a}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{9b.png} \label{fig:9b}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{9c.png} \label{fig:9c}}
+\subfloat[]{\includegraphics[scale=0.2]{9a.eps} \label{fig:9a}}
+\subfloat[]{\includegraphics[scale=0.2]{9b.eps} \label{fig:9b}}
+\subfloat[]{\includegraphics[scale=0.2]{9c.eps} \label{fig:9c}}
 \caption{The inverted non-dimensional permeability tensor components (a) $\kappa_{xx}/\kappa_{Ref}$, (b) $\kappa_{zz}/\kappa_{Ref}$, and (c) the interface set $\phi_\epsilon$ resulting from the Mumford-Shah-based inversion.}
 \label{fig:9}
 \end{figure}
@@ -289,7 +289,7 @@ Figure~\ref{fig:8} illustrates the permeability tensor resulting from the cell-b
 \sendatend{
 \begin{figure}
 \centering
- \includegraphics[scale=0.6]{10.png}
+ \includegraphics[scale=0.4]{10.eps}
 \caption{Comparing data misfit versus number of iterations for the cell-based and Mumfard-Shah inversion techniques.}
  \label{fig:10}
 \end{figure}
@@ -299,9 +299,9 @@ Figure~\ref{fig:10} compares the data misfit (on a logarithmic scale) versus the
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{11a.png} \label{fig:11a}} \\
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{11b.png} \label{fig:11b}}
-\subfloat[]{\includegraphics[scale=0.6, trim=0 0 0 0, clip]{11c.png} \label{fig:11c}}
+\subfloat[]{\includegraphics[scale=0.2]{11a.eps} \label{fig:11a}} \\
+\subfloat[]{\includegraphics[scale=0.2]{11b.eps} \label{fig:11b}}~~
+\subfloat[]{\includegraphics[scale=0.2]{11c.eps} \label{fig:11c}}
 \caption{(a) A block velocity model with a linearly sloping background velocity model and (b) seismogram obtained for a source located in the middle of the model and set of 501 receivers spreaded over the surface, and (c) the first-arrival data for 501 sources and 501 receivers spreaded over the surface. The red dots on (b) corresponds to the first-arrival times on the seismogram.}
 \label{fig:11}
 \end{figure}
@@ -313,10 +313,10 @@ For our next example, we recover the location of an anomalous homogeneous body u
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45,trim=0 12 0 0, clip]{12a.png} \label{fig:12a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=12 12 0 0, clip]{12b.png} \label{fig:12b}}\\
-\subfloat[]{\includegraphics[scale=0.45]{12c.png} \label{fig:12c}}
-\subfloat[]{\includegraphics[scale=0.45, trim=12 0 0 0, clip]{12d.png} \label{fig:12d}}
+\subfloat[]{\includegraphics[scale=0.2]{12a.eps} \label{fig:12a}}\\
+\subfloat[]{\includegraphics[scale=0.2]{12b.eps} \label{fig:12b}}\\
+\subfloat[]{\includegraphics[scale=0.2]{12c.eps} \label{fig:12c}}\\
+\subfloat[]{\includegraphics[scale=0.206]{12d.eps} \label{fig:12d}}
 \caption{(a) The background velocity model as the initial guess, (b) the velocity model inverted using the conventional cell-based inversion, (c) the velocity model inverted using Mumford-Shah inversion, and (d) the boundary set obtained from Mumford-Shah inversion. }
 \label{fig:12}
 \end{figure}
@@ -335,8 +335,8 @@ The wave speed from the cell-based inversion is illustrated in Figure~\ref{fig:1
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{13a.png} \label{fig:13a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{13b.png} \label{fig:13b}}
+\subfloat[]{\includegraphics[scale=0.2]{13a.eps} \label{fig:13a}}\\
+\subfloat[]{\includegraphics[scale=0.2]{13b.eps} \label{fig:13b}}
 \caption{(a) The phase-field function $\phi_\epsilon$ resulting from phase-field inversion and (b) is the corresponding velocity model using equation~\ref{eq:pf_kappa}.}
 \label{fig:13}
 \end{figure}
@@ -351,8 +351,8 @@ Figure~\ref{fig:13b} illustrates the wave speed obtained from phase-field.  This
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.5,trim=0 0 0 -40, clip]{14a.png} \label{fig:14a}}
-\subfloat[]{\includegraphics[scale=0.5, trim=0 0 0 0, clip]{14b.png} \label{fig:14b}}
+\subfloat[]{\includegraphics[scale=0.2,trim=0 0 250 0]{14a.eps} \label{fig:14a}}\\
+\subfloat[]{\includegraphics[scale=0.272]{14b.eps} \label{fig:14b}}
 \caption{(a) Differential density model ($\Delta\rho$) and (b) surface measurement of gravity based on the density difference model in (a).}
 \label{fig:14}
 \end{figure}
@@ -366,8 +366,8 @@ Gravity data are generated using the subsurface density model illustrated in Fig
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{15a.png} \label{fig:15a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{15b.png} \label{fig:15b}}
+\subfloat[]{\includegraphics[scale=0.2]{15a.eps} \label{fig:15a}}\\
+\subfloat[]{\includegraphics[scale=0.2]{15b.eps} \label{fig:15b}}
 \caption{The inversion results from (a) cell-based inversion and (b) phase-field inversion of data provided in Figure~\ref{fig:14b}.}
 \label{fig:15}
 \end{figure}
@@ -395,8 +395,8 @@ Figure~\ref{fig:15a} illustrates the density anomaly resulting from the cell-bas
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{16a.png} \label{fig:16a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{16b.png} \label{fig:16b}}
+\subfloat[]{\includegraphics[scale=0.2]{16a.eps} \label{fig:16a}}\\
+\subfloat[]{\includegraphics[scale=0.2]{16b.eps} \label{fig:16b}}
 \caption{The phase-field inversion results using joint travel-time (Figure~\ref{fig:11c}) and gravity data  (Figure~\ref{fig:14b}) for (a) the wave velocity and (b) differential density.}
 \label{fig:16}
 \end{figure}
@@ -411,10 +411,10 @@ The density and wave-speed profiles for the cell-based inversion are identical t
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{17a.png} \label{fig:17a}}
-\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{17b.png} \label{fig:17b}} \\
-\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{17c.png} \label{fig:17c}}
-\subfloat[]{\includegraphics[scale=0.55, trim=0 0 0 0, clip]{17d.png} \label{fig:17d}}
+\subfloat[]{\includegraphics[scale=0.25]{17a.eps} \label{fig:17a}}
+\subfloat[]{\includegraphics[scale=0.25]{17b.eps} \label{fig:17b}} \\
+\subfloat[]{\includegraphics[scale=0.25]{17c.eps} \label{fig:17c}}
+\subfloat[]{\includegraphics[scale=0.25]{17d.eps} \label{fig:17d}}
 \caption{(a) Travel-time data misfit, (b) velocity model misfit, (c) gravity data misfit and (d) density model misfit verus number of iterations for inversions with cell-based and phase-field techniques.}
 \label{fig:17}
 \end{figure}
@@ -441,8 +441,8 @@ Figure ~\ref{fig:804} compares the model misfit versus the number of iterations 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45,trim=0 0 0 0, clip]{18a.png} \label{fig:18a}}
-\subfloat[]{\includegraphics[scale=0.445, trim=0 0 0 -27, clip]{18b.png} \label{fig:18b}}
+\subfloat[]{\includegraphics[scale=0.3]{18a.eps} \label{fig:18a}} \\
+\subfloat[]{\includegraphics[scale=0.3]{18b.eps} \label{fig:18b}}
 \caption{(a) A modified Marmousi model with anomalous two salt geobodies and (b) an initial guess without presences of geobodies.}
 \label{fig:18}
 \end{figure}
@@ -467,8 +467,8 @@ The density $\rho$ is set equal to 1 g/cm$^3$.  The source f corresponds to a 2 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.45,trim=0 0 0 0, clip]{19a.png} \label{fig:19a}}
-\subfloat[]{\includegraphics[scale=0.45, trim=0 0 0 0, clip]{19b.png} \label{fig:19b}}
+\subfloat[]{\includegraphics[scale=0.3,trim=0 0 0 0, clip]{19a.eps} \label{fig:19a}} \\
+\subfloat[]{\includegraphics[scale=0.3, trim=0 0 0 0, clip]{19b.eps} \label{fig:19b}}
 \caption{(a) The velocity model and boundary set resulting from Mumfard-Shah inversion.}
 \label{fig:19}
 \end{figure}
@@ -480,8 +480,8 @@ The determination of the wave speed and the boundary set requires a multi-stage 
 \sendatend{
 \begin{figure}
 \centering 
-\subfloat[]{\includegraphics[scale=0.3,trim=0 0 0 0, clip]{20a.png} \label{fig:20a}}
-\subfloat[]{\includegraphics[scale=0.3, trim=0 0 0 0, clip]{20b.png} \label{fig:20b}}
+\subfloat[]{\includegraphics[scale=0.2]{20a.eps} \label{fig:20a}}\\
+\subfloat[]{\includegraphics[scale=0.2]{20b.eps} \label{fig:20b}}
 \caption{Mumford-Shah inversion: (a) data and (b) model misfits with the number of iterations.}
 \label{fig:20}
 \end{figure}
