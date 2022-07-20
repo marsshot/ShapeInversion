@@ -1,7 +1,8 @@
 from PIL import Image, ImageDraw, ImageFont
 import os
 
-src_dir='../'
+src_dir='png/'
+dst_dir='eps/'
 
 def remove_transparency(im, bg_color=(255, 255, 255)):
 	if im.mode in ('RGBA') or (im.mode == 'P' and 'transparency' in im.info):
@@ -26,6 +27,6 @@ files = os.listdir(src_dir)
 for png in files:
 	if png.endswith(".png"):
 		eps = png.replace('.png','.eps')
-		if not os.path.exists(eps):
+		if not os.path.exists(dst_dir+eps):
 			print("conveting {} to {}!".format(png,eps))
-			png2eps(src_dir+png,eps)
+			png2eps(src_dir+png,dst_dir+eps)
